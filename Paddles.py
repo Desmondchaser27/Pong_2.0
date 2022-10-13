@@ -6,7 +6,7 @@ class Paddle:
     def __init__(self, x, y):
 
 
-        self.width = 30 #* (Settings.WIDTH / 1200)
+        self.width = 30 #* (Settings.ini.WIDTH / 1200)
         self.height = 80
         self.x = x
         self.y = (y - self.height/2)
