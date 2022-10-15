@@ -10,7 +10,7 @@ FPS = 60
 def import_settings(settings_dict: dict[SettingsType, dict[str, Union[int, float, str]]]) -> None:
     setting: dict[str, Union[int, float, str]] = settings_dict.get(SettingsType.DISPLAY)
     global SCREEN, WIDTH, HEIGHT, FPS
-    if not setting is None:
+    if setting is not None:
         for key in setting:
             match key:
                 case "FPS":
