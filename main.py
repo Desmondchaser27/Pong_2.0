@@ -1,8 +1,13 @@
 import pygame, math, Settings, sys, random, Paddles
 from Paddles import Paddle
 from Ball import Ball
+import Helpers.FileReader as FileReader
 
 pygame.init()
+
+# Grab settings from Settings.ini before executing anything #
+settings_imported = FileReader.read_settings_file("Settings.ini")
+Settings.import_settings(settings_imported)
 
 window = pygame.display.set_mode(Settings.SCREEN, pygame.RESIZABLE)
 
