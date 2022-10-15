@@ -1,7 +1,8 @@
-import pygame
 from Helpers.FileReader import SettingsType
 from typing import Union
+from typing import Union
 
+from Helpers.FileReader import SettingsType
 
 SCREEN = WIDTH, HEIGHT = 1200, 800
 FPS = 60

@@ -9,13 +9,15 @@ class SettingsType(Enum):
     SKIP = 1
     DISPLAY = 2
 
+# -> Define return type
 
 def read_settings_file(filepath: str) -> dict[SettingsType, dict[str, Union[int, float, str]]]:
+    #the file variable is of the type typing.TEXTIO
     file: typing.TextIO = open(filepath, 'r')
     line: str = "_"  # Filler to get in while loop
     settings_type: SettingsType = SettingsType.SKIP
     dictionary: dict[SettingsType, dict[str, Union[int, float, str]]] = dict()
-    while not line == '':
+    while line != '':
         line = file.readline().strip()
 
         # TODO: as we add more setting options expand this match/case

@@ -1,7 +1,7 @@
 import Settings, pygame
 
 
-class Paddle:
+class Paddle(pygame.Surface):
 
     def __init__(self, x, y):
 
@@ -11,8 +11,9 @@ class Paddle:
         self.x = x
         self.y = (y - self.height/2)
         self.color = pygame.Color(0, 255, 0)
-        self.paddle = pygame.Surface((self.width, self.height))
-        self.paddle.fill(self.color)
+        super().__init__((self.width, self.height))
+        self.fill(self.color)
+        self.rect = pygame.Rect(self.x , self.y, self.width, self.height)
 
 
     def Move(self, window,up_key, down_key):
@@ -21,9 +22,10 @@ class Paddle:
             self.y -= 10
         elif keys[down_key] and self.y + self.height <= window.get_height():
             self.y += 10
+        self.rect.x, self.rect.y = (self.x, self.y)
 
     def draw(self, window):
-        pygame.draw.rect(window, self.color, (self.x, self.y, self.width, self.height))
+        pygame.draw.rect(window, self.color, self.rect)
 
 
 
