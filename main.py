@@ -53,7 +53,7 @@ while running:
     if ball.y <= 0 or ball.y + ball.get_height() >= Settings.HEIGHT:
         ball.y_vel *= -1
 
-    print(paddle_right.get_bounding_rect().x)
+    
     #if ball.x <= 0:
     #    ball reset
     #if ball.x + ball.get_width() >= Settings.WIDTH:
